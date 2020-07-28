@@ -1,0 +1,74 @@
+#### Entrada de dados externos ####---------------------------------------------
+
+# mudança de diretorio com SETWD
+setwd("/home/luciano/Área de Trabalho/Curso_R_2020/Aulas")
+
+#entrada do dados, informe se há ou não cabeçalho
+read.table("dados_aula_2.csv", header=TRUE)
+
+#Atribuir banco de dados à objeto
+dados<-read.table("dados_aula_2.csv", header=TRUE)
+  
+#temso duas variáveis, "Idade.semanas" e "Peso", para acessar o dataframe usamos
+#o simbolo $
+
+dados$Idade.Semanas.
+dados$Peso
+
+# ou pode-se anexar á memória do software cada coluna da data frame
+attach(dados)
+
+Peso
+Idade.Semanas.
+
+# incorporar dados diretamente de sites e armazenar em objetos
+x<-read.table("https://sidra.ibge.gov.br/tabela/6407#resultado")
+
+
+
+### Estatísticas desritivas ####------------------------------------------------
+
+#verificaçaõ da natureza de cada variável
+is.numeric(Peso)
+is.numeric(Idade.Semanas.)
+
+## Medidas de dispersão e de posição##
+
+max(Peso) # Retorna o valor máximo de um campo
+
+min(Peso) # Retorna o valor mínimo de um campo
+
+mean(Peso) # Retorna a média de um campo
+
+median(Peso)  #Retorna a mediana de um campo
+
+sd(Peso) #Retorna o desvio padrão de um campo
+
+var(Peso)  #Retorna a variância de um campo
+
+sum(Peso)  #Retorna a soma (total) de um campo
+
+length(Peso) # Retorna a quantidade de elementos em um campo
+
+range(Peso)  #Retorne os valores mínimo e máximo de um campo
+
+quantile(Peso)  #Retorna os quantis de um campo
+
+prop.table(table(Peso)) #disribuição probablistica dos dados por cada observaçaõ
+
+sort(Peso) # ordena os dados em modo crescente
+
+# organiza em ordem crescente ou  decrescente
+order(dados$Idade.Semanas., decreasing = TRUE)
+
+# Associa a ordem à ocorrencia
+dd<-c(order(dados$Idade.Semanas., decreasing = TRUE),Idade.Semanas.)
+matrix(dd,6,2)
+
+hist(Peso) # histograma da variável 
+
+Coeficiente.Variação<- ((sd(Peso)/mean(Peso))*100) # CV da variável
+
+summary(dados) # resumo descritivo dos dados
+
+
